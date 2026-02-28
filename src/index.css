@@ -2,7 +2,7 @@
    JOSKINS — PREMIUM WHOLE SPICES
    Design System & Complete Styles
    ============================================= */
-
+@import "tailwindcss";
 :root {
   --green: #1a4d2e;
   --green-dark: #0f3520;
@@ -183,6 +183,8 @@ ul { list-style: none; }
 .navbar__logo {
   height: 80px;
   width: auto;
+  scale: 1.4;
+  margin: auto;
   object-fit: contain;
 }
 
