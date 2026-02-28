@@ -181,7 +181,7 @@ ul { list-style: none; }
 .navbar__brand { z-index: 10; }
 
 .navbar__logo {
-  height: 100px;
+  height: 90px;
   width: auto;
  
   object-fit: contain;
