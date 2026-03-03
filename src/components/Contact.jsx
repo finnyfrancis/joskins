@@ -58,7 +58,7 @@ function Contact() {
                 </div>
                 <div>
                   <strong>Office</strong>
-                  <p>Joskins Agro Production<br/>10219, Phase 2, Vijayanagar 4th Stage<br/>Mysuru, Karnataka, India 570032</p>
+                  <p>Joskins Foods and Spices<br/>10219, Phase 2, Vijayanagar 4th Stage<br/>Mysuru, Karnataka, India 570032</p>
                 </div>
               </div>
               <div className="contact__card">
@@ -94,7 +94,7 @@ function Contact() {
               <h4 className="contact__map-title">Find Our Shop</h4>
               <div className="contact__map-wrap">
                 <iframe
-                  title="Joskins Agro Production Location"
+                  title="Joskins Foods and Spices Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.5!2d76.5908329!3d12.320662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b84a303d023%3A0x36a877017bbac48f!2sJoskins%20Agro%20Production!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="220"

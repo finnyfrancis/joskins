@@ -17,7 +17,7 @@ function About() {
               Built on <span className="accent">Trust</span>
             </h2>
             <p>
-              Joskins Agro Production is a proudly Indian spice company
+              Joskins Foods and Spices is a proudly Indian spice company
               dedicated to delivering the world's finest whole spices under the
               <strong> Joskins</strong> brand. We bridge the gap between
               India's farming heartland and global kitchens.

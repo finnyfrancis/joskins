@@ -257,7 +257,7 @@ ul { list-style: none; }
   min-height: 92vh;
   display: flex;
   align-items: center;
-  background: #0c0804;
+  background: #4a2f10;
   overflow: hidden;
 }
 
@@ -265,9 +265,9 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 75% 60%, rgba(172, 95, 12, 0.38) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 80%, rgba(100, 45, 5, 0.30) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 10%, rgba(80, 35, 5, 0.20) 0%, transparent 60%);
+    radial-gradient(ellipse at 75% 60%, rgba(220, 140, 30, 0.50) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(160, 90, 20, 0.40) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 10%, rgba(140, 75, 15, 0.30) 0%, transparent 60%);
 }
 
 .hero__inner {
@@ -393,7 +393,7 @@ ul { list-style: none; }
 }
 
 .hero__accent {
-  color: var(--green);
+  color: #000000;
   position: relative;
 }
 

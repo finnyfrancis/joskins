@@ -10,7 +10,7 @@ function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <h3 className="footer__title">Joskins Agro Production</h3>
+            <h3 className="footer__title">Joskins Foods and Spices</h3>
             <p>
               Bringing the authentic taste of India to the world — premium whole
               spices under the Joskins brand, sourced with care and delivered
@@ -49,7 +49,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <p>&copy; {year} Joskins Agro Production. All rights reserved.</p>
+          <p>&copy; {year} Joskins Foods and Spices. All rights reserved.</p>
           <p>Farm Fresh. Globally Trusted. Purely Natural.</p>
         </div>
       </div>

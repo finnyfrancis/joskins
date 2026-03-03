@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const slides = [
-  { src: '/hero-slide-1.png', alt: 'Joskins Spice Packets — Premium Black Pepper, Star Anise, Methi Fenugreek, Ajwain, Green Cardamom' },
-  { src: '/hero-slide-2.png', alt: 'Joskins Spice Packets — Cassia Cinnamon, Ceylon Cinnamon, Fennel Saunf, Javtri Mace, Nutmeg' },
+  { src: '/hero-slide-1.png', alt: 'Joskins Spice Packets — Cassia Cinnamon, Fennel Saunf, Jeera Cumin, Javtri Mace, Nutmeg' },
+  { src: '/hero-slide-2.png', alt: 'Joskins Spice Packets — Premium Black Pepper, Star Anise, Methi Fenugreek, Ajwain, Green Cardamom' },
 ];
 
 function Hero() {
@@ -30,7 +30,7 @@ function Hero() {
       <div className="hero__bg" />
       <div className="hero__inner">
         <div className="hero__text">
-          <span className="hero__badge">Joskins Agro Production — The Spice Maestro</span>
+          <span className="hero__badge">Joskins Foods and Spices</span>
           <h1 className="hero__title">
             Premium <span className="hero__accent">Whole Spices</span><br />
             Straight from India's Heartland
@@ -50,7 +50,7 @@ function Hero() {
           </div>
           <div className="hero__stats">
             <div className="hero__stat"><strong>50+</strong><span>Spice Varieties</span></div>
-            <div className="hero__stat"><strong>20+</strong><span>Countries Served</span></div>
+            <div className="hero__stat"><strong>100%</strong><span>Authentic</span></div>
             <div className="hero__stat"><strong>100%</strong><span>Natural & Pure</span></div>
           </div>
         </div>
