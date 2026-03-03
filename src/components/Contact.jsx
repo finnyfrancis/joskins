@@ -1,16 +1,43 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', spice: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [popup, setPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const change = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', phone: '', company: '', spice: '', message: '' });
+    setLoading(true);
+    setError('');
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone || 'Not provided',
+          company: form.company || 'Not provided',
+          spice: form.spice || 'Not specified',
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setSent(true);
+      setPopup(true);
+      setTimeout(() => setSent(false), 5000);
+      setForm({ name: '', email: '', phone: '', company: '', spice: '', message: '' });
+    } catch {
+      setError('Failed to send. Please try again or email us directly at joskins.foods@gmail.com');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -31,7 +58,7 @@ function Contact() {
                 </div>
                 <div>
                   <strong>Office</strong>
-                  <p>Joskins Agro Production<br/>Mysuru, Karnataka, India</p>
+                  <p>Joskins Agro Production<br/>10219, Phase 2, Vijayanagar 4th Stage<br/>Mysuru, Karnataka, India 570032</p>
                 </div>
               </div>
               <div className="contact__card">
@@ -91,6 +118,7 @@ function Contact() {
 
           <form className="contact__form" onSubmit={submit}>
             {sent && <div className="contact__ok">Thank you! We'll get back to you shortly.</div>}
+            {error && <div className="contact__err">{error}</div>}
             <div className="form-row">
               <div className="field">
                 <label htmlFor="name">Full Name *</label>
@@ -131,10 +159,31 @@ function Contact() {
               <label htmlFor="message">Message *</label>
               <textarea id="message" name="message" required rows="4" placeholder="Tell us about your requirement — quantity, delivery location, timeline..." value={form.message} onChange={change} />
             </div>
-            <button type="submit" className="btn btn--primary btn--full">Send Enquiry</button>
+            <button type="submit" className="btn btn--primary btn--full" disabled={loading}>
+              {loading ? 'Sending…' : 'Send Enquiry'}
+            </button>
           </form>
         </div>
       </div>
+      {popup && (
+        <div className="popup__overlay" onClick={() => setPopup(false)}>
+          <div className="popup__card" onClick={(e) => e.stopPropagation()}>
+            <div className="popup__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="40" height="40">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M7 13l3 3 7-7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <h3 className="popup__title">Enquiry Sent!</h3>
+            <p className="popup__msg">
+              Thank you for reaching out. Our team will get back to you within 24 hours.
+            </p>
+            <button className="btn btn--primary popup__btn" onClick={() => setPopup(false)}>
+              Done
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

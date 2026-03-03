@@ -7,7 +7,7 @@ const spices = [
     desc: 'Intensely aromatic whole pods, handpicked for vibrant green color and rich essential oil content.' },
   { name: 'Turmeric Finger', origin: 'Andhra Pradesh', grade: 'Salem / Erode', img: '/spices/turmeric-finger.png',
     desc: 'High-curcumin golden turmeric fingers, sun-dried for maximum potency and deep natural color.' },
-  { name: 'Cinnamon Sticks', origin: 'Kerala', grade: 'C5 Special', img: '/spices/cinnamon-sticks.png',
+  { name: 'Cinnamon Sticks', origin: 'Sri Lanka', grade: 'C5 Special', img: '/spices/cinnamon-sticks.png',
     desc: 'True Ceylon-style cinnamon — delicate, sweet aroma with thin, tightly rolled quills.' },
   { name: 'Whole Cloves', origin: 'Kerala & Tamil Nadu', grade: 'Hand Picked Bold', img: '/spices/whole-cloves.png',
     desc: 'Premium whole cloves with high eugenol oil content, offering intense warmth and rich fragrance.' },

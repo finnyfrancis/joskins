@@ -1,8 +1,29 @@
+import { useState, useEffect } from 'react';
+
+const slides = [
+  { src: '/hero-slide-1.png', alt: 'Joskins Spice Packets — Premium Black Pepper, Star Anise, Methi Fenugreek, Ajwain, Green Cardamom' },
+  { src: '/hero-slide-2.png', alt: 'Joskins Spice Packets — Cassia Cinnamon, Ceylon Cinnamon, Fennel Saunf, Javtri Mace, Nutmeg' },
+];
+
 function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [fading, setFading] = useState(false);
+
   const scroll = (e, id) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setCurrent(prev => (prev + 1) % slides.length);
+        setFading(false);
+      }, 400);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="hero" className="hero">
@@ -33,8 +54,26 @@ function Hero() {
             <div className="hero__stat"><strong>100%</strong><span>Natural & Pure</span></div>
           </div>
         </div>
+
         <div className="hero__visual">
-          <img src="/joskins-packets.png" alt="Joskins Premium Whole Spices — Cardamom, Cloves, Star Anise packets" className="hero__img" />
+          <div className="hero__carousel">
+            <img
+              key={current}
+              src={slides[current].src}
+              alt={slides[current].alt}
+              className={`hero__img hero__img--slide ${fading ? 'hero__img--fade-out' : 'hero__img--fade-in'}`}
+            />
+            <div className="hero__dots">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  className={`hero__dot ${i === current ? 'hero__dot--active' : ''}`}
+                  onClick={() => { setFading(true); setTimeout(() => { setCurrent(i); setFading(false); }, 400); }}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
